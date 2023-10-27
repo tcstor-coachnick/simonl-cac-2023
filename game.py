@@ -108,7 +108,7 @@ class Game:
     def check_enemy_hit(self):
         for bullet in self.bullets:
             for enemy in self.enemies:
-                if bullet.colliderect(enemy):
+                if bullet.get_hitbox().colliderect(enemy.get_hitbox):
                     enemy.hp -= bullet.dmg
                     if enemy.hp <= 0:
                         self.enemies.remove(enemy)
